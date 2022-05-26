@@ -4,6 +4,7 @@
       <span class="name">{{ data.name }}</span>
       <span class="content">{{ data.content }}</span>
     </div>
+    <Tutorial />
   </div>
 </template>
 
