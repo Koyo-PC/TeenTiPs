@@ -1,18 +1,20 @@
-[
-  {
-    "name": "Aさん",
-    "content": "あああ"
+{
+  "title":{
+    "text":"【Girl in STEM】理系分野での女性の可能性を広げるために。宇宙飛行士・山崎直子さんと考える進路のエンパワメント",
+    "sub":"",
+    "date":""
   },
-  {
-    "name": "Bさん",
-    "content": "いいい"
-  },
-  {
-    "name": "Aさん",
-    "content": "おおうhぢjhふぃえsだお"
-  },
-  {
-    "name": "Cさん",
-    "content": "おおうhぢjhふぃえsだお"
-  }
-]
+  "contents":[
+    {"h1":"title"},
+    {"img":"url"},
+    {"name":"name", "remark":"remark"}
+  ]
+}
+
+
+// let titleLisyt = []
+// for<textdata : contentsData) {
+//   if(textdata.h1 != unde) {
+//     titleLisyt.add({"h1", textdata.h1})
+//   }eldse if()...
+// }
