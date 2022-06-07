@@ -1,0 +1,49 @@
+name: Deploy to tips.koyo-onten.net
+
+on:
+  push:
+    # branches-ignore: # Disable
+    #   - '**'
+    branches: [ release ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: 'dummy'
+
+      - name: Adding Known Hosts
+        run: ssh-keyscan -H koyo-onten.net > ~/.ssh/known_hosts
+
+      - name: Setup node v14
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install packages
+        run: npm ci
+
+      - name: Nuxt generate
+        run: npm run generate
+
+      - name: Deploy
+        run: rsync -ahvz ./dist/ ${{ secrets.SSH_USERNAME }}@koyo-onten.net:/var/www/html/tips.koyo-onten.net/ --bwlimit=8192 --timeout=600 --rsync-path='sudo rsync'
