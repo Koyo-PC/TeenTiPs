@@ -43,5 +43,8 @@ jobs:
       - name: Nuxt generate
         run: npm run generate
 
+      - name: Cleanup
+        run: ssh -i ~/.ssh/id_ed25519 "rm -r /var/www/tips/"
+
       - name: Deploy
-        run: rsync -ahvz -delete -e 'ssh -i ~/.ssh/id_ed25519' ./dist/ tips@koyo-onten.net:/var/www/tips/ -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+        run: scp -r -i ~/.ssh/id_ed25519 ./dist/ tips@koyo-onten.net:/var/www/tips/
