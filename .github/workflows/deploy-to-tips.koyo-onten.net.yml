@@ -21,7 +21,7 @@ jobs:
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          name: tips@koyo-onten.net
+          name: id_ed25519
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
 
       - name: Setup node v14
@@ -44,4 +44,4 @@ jobs:
         run: npm run generate
 
       - name: Deploy
-        run: rsync -ahvz -delete ./dist/ tips@koyo-onten.net:/var/www/tips/ -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+        run: rsync -ahvz -delete -e 'ssh -i ~/.ssh/id_ed25519' ./dist/ tips@koyo-onten.net:/var/www/tips/ -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
