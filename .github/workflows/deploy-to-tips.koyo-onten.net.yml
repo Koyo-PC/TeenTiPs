@@ -4,7 +4,7 @@ on:
   push:
     # branches-ignore: # Disable
     #   - '**'
-    branches: [ release ]
+    branches: [ release, main ]
 
   workflow_dispatch:
 
