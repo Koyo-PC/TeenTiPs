@@ -44,7 +44,7 @@ jobs:
         run: npm run generate
 
       - name: Cleanup
-        run: ssh -i ~/.ssh/id_ed25519 "rm -r /var/www/tips/"
+        run: ssh -i ~/.ssh/id_ed25519 tips@koyo-onten.net "rm -r /var/www/tips/"
 
       - name: Deploy
         run: scp -r -i ~/.ssh/id_ed25519 ./dist/ tips@koyo-onten.net:/var/www/tips/
