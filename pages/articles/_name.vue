@@ -8,10 +8,10 @@
       <div v-html="content"></div>
     </article>
     <hr>
-    <!-- <h1>関連する記事</h1>
+    <h2>Related Articles</h2>
     <div class="relative_articles">
       <ArticleCard v-for="page in pageData.relative" :pageName="page"></ArticleCard>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -36,7 +36,7 @@ export default {
     const renderer = new marked.Renderer();
     renderer.heading = function (text, level, raw, slugger) {
       const id = this.options.headerPrefix + slugger.slug(raw);
-      if (level === 2) {
+
         tocData.push({text, id});
       }
       return `<h${level} id="${id}">${text}</h${level}>\n`;
@@ -81,16 +81,21 @@ export default {
     bottom: -3px;
     z-index: -1;
   }
+
+  article {
+    margin: 100px 0 0 0;
+  }
+
   img {
     width: 100%;
     object-fit: cover;
   }
-  h2, .quest, p {
+  h3, .quest, p {
     display: block;
     width: 90%;
     margin: 10px auto;
   }
-  h2 {
+  h3 {
     font-size: 23px;
   }
   .quest {
@@ -106,9 +111,14 @@ export default {
     margin: 0;
   }
 
-.relative_articles {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
+  .relative_articles {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  h2 {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+  }
 </style>

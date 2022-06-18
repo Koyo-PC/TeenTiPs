@@ -1,6 +1,7 @@
 <template>
   <div class="article_card">
-    <img class="article_card_img" :alt="title" :src="thumbnail"/>
+    <!-- <img class="article_card_img" :alt="title" :src="thumbnail"/> -->
+    <img class="article_card_img" src="/logo.png" alt="">
     <div class="article_card_content">
       {{ subtitle }}
     </div>
@@ -32,10 +33,10 @@ export default {
 
 <style scoped>
 .article_card {
-  width: 200px;
-  height: 200px;
-  margin: 20px calc((100% - 200px * 3) / 6);
-  background-color: rebeccapurple;
+  width: 40%;
+  height: 150px;
+  margin: 20px auto;
+  /*background-color: rebeccapurple;*/
 }
 
 .article_card_img {
@@ -44,6 +45,7 @@ export default {
   height: auto;
   aspect-ratio: calc(16 / 9);
   background-color: aqua;
+  object-fit: cover;
 }
 
 .article_card_content {
