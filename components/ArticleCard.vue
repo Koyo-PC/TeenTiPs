@@ -1,11 +1,11 @@
 <template>
-  <div class="article_card">
+  <a class="article_card" :href="`/articles/${pageName}`">
     <!-- <img class="article_card_img" :alt="title" :src="thumbnail"/> -->
     <img class="article_card_img" src="/logo.png" alt="">
     <div class="article_card_content">
       {{ subtitle }}
     </div>
-  </div>
+  </a>
 </template>
 
 <script>
@@ -33,6 +33,7 @@ export default {
 
 <style scoped>
 .article_card {
+  display: block;
   width: 40%;
   height: 150px;
   margin: 20px auto;

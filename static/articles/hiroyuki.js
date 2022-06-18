@@ -14,11 +14,11 @@
 （参考）https://onl.bz/VNZkCwc`
   },
   relative: [
+    "katsura",
     "hiroyuki",
+    "katsura",
     "hiroyuki",
-    "hiroyuki",
-    "hiroyuki",
-    "hiroyuki",
+    "katsura",
     "hiroyuki"
   ]
 })
