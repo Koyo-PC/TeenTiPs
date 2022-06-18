@@ -43,5 +43,10 @@ export default {
   build: {},
   generate: {
     routes: require(__dirname + "/static/data/pages.json").map(name => `/articles/${name}`)
+  },
+  loading: {
+    color: 'blue',
+    height: '5px',
+    continuous: true
   }
 }
