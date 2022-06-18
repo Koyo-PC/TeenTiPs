@@ -12,6 +12,8 @@
     <div class="relative_articles">
       <ArticleCard v-for="page in pageData.relative" :pageName="page"></ArticleCard>
     </div>
+
+    <Footer />
   </div>
 </template>
 
@@ -77,13 +79,13 @@ export default {
     position: absolute;
     top: -3px;
     left: -3px;
-    right: -3px;
-    bottom: -3px;
+    right: 3px;
+    bottom: 3px;
     z-index: -1;
   }
 
   article {
-    margin: 100px 0 0 0;
+    margin: 80px 0 0 0;
   }
 
   img {
@@ -115,6 +117,7 @@ export default {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    max-width: 100%;
   }
   h2 {
     display: block;
