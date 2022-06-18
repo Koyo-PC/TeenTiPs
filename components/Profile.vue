@@ -1,7 +1,7 @@
 <template>
   <div class="profile">
     <h2>{{ content.title }}</h2>
-    <p v-html="require('marked').setOptions({ breaks: true }).parse(content.content === undefined ? 'loading...' : content.content)">
+    <p v-html="content.content">
     </p>
   </div>
 </template>

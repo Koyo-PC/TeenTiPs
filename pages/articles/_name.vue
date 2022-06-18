@@ -1,33 +1,34 @@
 <template>
   <div>
     <Top/>
-    <Title :data="titleData"/>
-    <Profile :content="profileData"></Profile>
-    <Toc :content="tocData"></Toc>
-    <div v-html="content"></div>
+    <article>
+      <Title :data="pageData.title || {}"/>
+      <Profile :content="pageData.profile || {}"></Profile>
+      <Toc :content="tocData"></Toc>
+      <div v-html="content"></div>
+    </article>
+    <hr>
+    <h1>関連する記事</h1>
+    <div class="relative_articles">
+      <ArticleCard v-for="page in pageData.relative" :pageName="page"></ArticleCard>
+    </div>
   </div>
 </template>
 
 <script>
 import {marked} from "marked";
 import axios from "axios";
-import Profile from "../../components/Profile";
 
 export default {
-  components: {Profile},
   data() {
     return {
-      titleData: {},
-      content: "",
+      content: "loading...",
       tocData: [],
-      profileData: {}
+      pageData: {}
     }
   },
-  async mounted() {
-    const pageData = eval((await axios.get(`/articles/${this.$route.params.name}.js`)).data)();
-    console.log(pageData)
-    this.titleData = pageData.title;
-    this.profileData = pageData.profile;
+  async beforeMount() {
+    this.pageData = eval((await axios.get(`/articles/${this.$route.params.name}.js`)).data)();
 
     const mdContent = (await axios.get(`/articles/${this.$route.params.name}.md`)).data;
 
@@ -41,7 +42,7 @@ export default {
       }
       return `<h${level} id="${id}">${text}</h${level}>\n`;
     }
-    marked.setOptions({ breaks: true })
+    marked.setOptions({breaks: true})
     this.content = marked.parse(mdContent, {renderer: renderer});
     this.tocData = tocData;
   }
@@ -53,5 +54,11 @@ html, body {
   width: 100%;
   height: 100%;
   margin: unset;
+}
+
+.relative_articles {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 </style>
