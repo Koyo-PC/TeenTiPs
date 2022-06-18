@@ -2,7 +2,7 @@
   <div class="bcpic">
     <Top/>
     <article>
-      <Title :data="pageData.title || {}"/>
+      <Title :content="pageData.title || {}"/>
       <Profile :content="pageData.profile || {}"></Profile>
       <Toc :content="tocData"></Toc>
       <div v-html="content"></div>
@@ -36,11 +36,14 @@ export default {
     const renderer = new marked.Renderer();
     renderer.heading = function (text, level, raw, slugger) {
       const id = this.options.headerPrefix + slugger.slug(raw);
-
       if (level === 2) {
         tocData.push({text, id});
       }
       return `<h${level} id="${id}">${text}</h${level}>\n`;
+    }
+    renderer.paragraph = function (text) {
+      if(text.startsWith("──")) return `<p class="quest">${text}</p>\n`;
+      else return `<p>${text}</p>\n`;
     }
     marked.setOptions({breaks: true})
     this.content = marked.parse(mdContent, {renderer: renderer});

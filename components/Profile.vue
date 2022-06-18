@@ -1,7 +1,7 @@
 <template>
   <div class="profile">
-    <h2>{{ content.title }}</h2>
-    <p v-html="content.content">
+    <h2>{{ title }}</h2>
+    <p v-html="text">
     </p>
   </div>
 </template>
@@ -10,6 +10,19 @@
 export default {
   name: "Profile",
   props: ["content"],
+  data() {
+    return {
+      title: "",
+      text: ""
+    }
+  },
+  watch: {
+    content(value) {
+      console.log(value)
+      this.title = value.title;
+      this.text = value.content.replaceAll("\n", "<br>");
+    }
+  }
 }
 </script>
 
