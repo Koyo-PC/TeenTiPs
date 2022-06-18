@@ -5,11 +5,11 @@
 </template>
 
 
-<style type="text/css">
+<style type="text/css" scoped>
 	nav {
 		width: 100%;
 		height: 9vh;
-		background-color: white;
+		background-color: floralwhite;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;

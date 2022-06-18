@@ -1,8 +1,8 @@
 {
   "title":{
     "text":"【Girl in STEM】理系分野での女性の可能性を広げるために。宇宙飛行士・山崎直子さんと考える進路のエンパワメント",
-    "sub":"",
-    "date":""
+    "sub":"宇宙に興味がある女の子は多くても、キャリアや進路で選択する人はごく僅か。そのジェンダーギャップの要因はどこに？",
+    "date":"2021/10/19"
   },
   "contents":[
     {"h1":"title"},
@@ -10,11 +10,3 @@
     {"name":"name", "remark":"remark"}
   ]
 }
-
-
-// let titleLisyt = []
-// for<textdata : contentsData) {
-//   if(textdata.h1 != unde) {
-//     titleLisyt.add({"h1", textdata.h1})
-//   }eldse if()...
-// }
