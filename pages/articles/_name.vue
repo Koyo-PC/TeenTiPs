@@ -36,7 +36,7 @@ export default {
     const renderer = new marked.Renderer();
     renderer.heading = function (text, level, raw, slugger) {
       const id = this.options.headerPrefix + slugger.slug(raw);
-
+      if (level === 3) {
         tocData.push({text, id});
       }
       return `<h${level} id="${id}">${text}</h${level}>\n`;
