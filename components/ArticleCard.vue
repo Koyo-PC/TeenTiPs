@@ -1,8 +1,5 @@
 <template>
   <a class="article_card" :href="`/articles/${pageName}`">
-    <!-- <img class="article_card_img" :alt="title" :src="thumbnail"/> -->
-    <img class="article_card_img" src="/logo.png" alt="">
-  <div class="article_card">
     <img class="article_card_img" :alt="title" :src="thumbnail"/>
     <div class="article_card_content">
       {{ subtitle }}
