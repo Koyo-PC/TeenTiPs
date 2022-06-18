@@ -1,11 +1,10 @@
 <template>
   <div class="toc">
-    <h2>目次</h2>
-    <ul>
+    <ol>
       <li v-for="data in content">
         <a :href="`#${data.id}`">{{ data.text }}</a>
       </li>
-    </ul>
+    </ol>
   </div>
 </template>
 
@@ -17,5 +16,21 @@ export default {
 </script>
 
 <style scoped>
-
+  ol {
+    display: block;
+    width: 75%;
+    margin: 80px auto;
+    /*background-color: gray;*/
+    list-style-type: dash;
+  }
+  ol > li {
+    color: blue;
+  }
+  ol > li > a {
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 30px;
+    color: black;
+    padding-left: 10px;
+  }
 </style>
