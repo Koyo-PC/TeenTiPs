@@ -2,6 +2,7 @@
   <div>
     <Top/>
     <Title :data="titleData"/>
+    <Toc :data="tocList"></Toc>
     <div v-html="content"></div>
   </div>
 </template>
@@ -14,15 +15,28 @@ export default {
   data() {
     return {
       titleData: {},
-      content: ""
+      content: "",
+      tocList: []
     }
   },
   async mounted() {
     const jsonData = (await axios.get(`/articles/${this.$route.params.name}.json`)).data;
     this.titleData = jsonData.title;
+
     const mdContent = (await axios.get(`/articles/${this.$route.params.name}.md`)).data;
-    const htmlContent = marked.parse(mdContent)
-    this.content = htmlContent;
+
+    const tocList = [];
+    const renderer = new marked.Renderer();
+    renderer.heading = function (text, level, raw, slugger) {
+      const id = this.options.headerPrefix + slugger.slug(raw);
+
+      if (level === 2) {
+        tocList.push({text, id});
+      }
+      return `<h${level} id="${id}">${text}</h${level}>\n`;
+    }
+    this.content = marked.parse(mdContent, {renderer: renderer});
+    this.tocList = tocList;
   }
 }
 </script>
