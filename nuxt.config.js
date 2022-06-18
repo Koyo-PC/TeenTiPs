@@ -42,6 +42,6 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   generate: {
-    routes: require(__dirname + "/static/data/pages.json").map(name => {console.log(`/articles/${name}`)}) +[]
+    routes: require(__dirname + "/static/data/pages.json").map(name => `/articles/${name}`)
   }
 }
