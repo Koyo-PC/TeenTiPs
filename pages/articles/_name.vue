@@ -2,7 +2,8 @@
   <div>
     <Top/>
     <Title :data="titleData"/>
-    <Toc :data="tocList"></Toc>
+    <Profile :content="profileData"></Profile>
+    <Toc :content="tocData"></Toc>
     <div v-html="content"></div>
   </div>
 </template>
@@ -10,33 +11,39 @@
 <script>
 import {marked} from "marked";
 import axios from "axios";
+import Profile from "../../components/Profile";
 
 export default {
+  components: {Profile},
   data() {
     return {
       titleData: {},
       content: "",
-      tocList: []
+      tocData: [],
+      profileData: {}
     }
   },
   async mounted() {
-    const jsonData = (await axios.get(`/articles/${this.$route.params.name}.json`)).data;
-    this.titleData = jsonData.title;
+    const pageData = eval((await axios.get(`/articles/${this.$route.params.name}.js`)).data)();
+    console.log(pageData)
+    this.titleData = pageData.title;
+    this.profileData = pageData.profile;
 
     const mdContent = (await axios.get(`/articles/${this.$route.params.name}.md`)).data;
 
-    const tocList = [];
+    const tocData = [];
     const renderer = new marked.Renderer();
     renderer.heading = function (text, level, raw, slugger) {
       const id = this.options.headerPrefix + slugger.slug(raw);
 
       if (level === 2) {
-        tocList.push({text, id});
+        tocData.push({text, id});
       }
       return `<h${level} id="${id}">${text}</h${level}>\n`;
     }
+    marked.setOptions({ breaks: true })
     this.content = marked.parse(mdContent, {renderer: renderer});
-    this.tocList = tocList;
+    this.tocData = tocData;
   }
 }
 </script>
