@@ -1,15 +1,18 @@
 <template>
-  <ul>
-    <li v-for="d in data">
-      <a :href="`#${d.id}`">{{ d.text }}</a>
-    </li>
-  </ul>
+  <div class="toc">
+    <h2>目次</h2>
+    <ul>
+      <li v-for="data in content">
+        <a :href="`#${data.id}`">{{ data.text }}</a>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
 export default {
   name: "Toc",
-  props: ["data"]
+  props: ["content"]
 }
 </script>
 
