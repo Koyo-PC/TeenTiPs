@@ -71,9 +71,9 @@ export default {
 }
 
 .spinner {
-  width: 100vh;
-  height: 100vh;
-  margin: 0 auto;
+  width: 100vmin;
+  height: 100vmin;
+  margin: calc(50vh - 50vmin) calc(50vw - 50vmin);
   background-color: #fff;
   border-radius: 100%;
   animation: sk-scaleout 1.0s infinite ease-in-out;
