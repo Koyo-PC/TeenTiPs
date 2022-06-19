@@ -31,7 +31,7 @@ export default {
     return {
       title: `${this.pageData.title?.text} - TeenTiPs`,
       meta: [
-        {hid: 'description', name: 'description', content: this.pageData.title.subtitle},
+        {hid: 'description', name: 'description', content: this.pageData.title?.subtitle},
       ]
     }
   },
