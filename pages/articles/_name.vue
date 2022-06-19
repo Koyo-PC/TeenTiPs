@@ -12,9 +12,9 @@
       <div v-html="content"></div>
     </article>
     <hr>
-    <h2 style="color: rgb(255, 157, 148);">Related Articles</h2>
-    <div class="relative_articles">
-      <ArticleCard v-for="page in pageData.relative" :pageName="page"></ArticleCard>
+    <h2 style="color: rgb(255, 157, 148);">Other Articles</h2>
+    <div class="other_articles">
+      <ArticleCard v-for="page in articles" v-if="page !== pageData.sys_name" :pageName="page"></ArticleCard>
     </div>
 
     <Footer />
@@ -40,6 +40,7 @@ export default {
       content: "loading...",
       tocData: [],
       pageData: {},
+      articles: {},
       loaded: false
     }
   },
@@ -64,13 +65,14 @@ export default {
     marked.setOptions({breaks: true})
     this.content = marked.parse(mdContent, {renderer: renderer});
     this.tocData = tocData;
+    this.articles = (await axios.get(`/data/pages.json`)).data;
     this.loaded = true;
   },
 }
 </script>
 
 <style>
- 
+
 .bc {
   position: fixed;
   z-index: -1;
@@ -114,7 +116,7 @@ blockquote {
   margin: 0;
 }
 
-.relative_articles {
+.other_articles {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

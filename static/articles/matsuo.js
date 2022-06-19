@@ -21,13 +21,5 @@
 専門は、人工知能、Webマイニング、ビッグデータ分析、ディープラーニング。
 （参考）https://weblab.t.u-tokyo.ac.jp/dt_team/matsuo/`,
     photo: "/logo.png"
-  },
-  relative: [
-    "hiroyuki",
-    "katsura",
-    "hiroyuki",
-    "katsura",
-    "hiroyuki",
-    "katsura"
-  ]
+  }
 })
