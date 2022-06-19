@@ -15,11 +15,9 @@
     photo: "/logo.png"
   },
   relative: [
-    "katsura",
     "hiroyuki",
     "katsura",
-    "hiroyuki",
-    "katsura",
-    "hiroyuki"
+    "yamagiwa",
+    "yamazaki"
   ]
 })

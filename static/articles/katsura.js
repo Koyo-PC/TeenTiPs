@@ -1,7 +1,7 @@
 () => ({
   name: "桂福丸",
   sys_name: "katsura",
-  thumbnail: "/logo.png",
+  thumbnail: "/images/kh00.jpg",
   color: "#dbf2ff",
   title: {
     text: "桂福丸さま",
@@ -20,9 +20,7 @@
   relative: [
     "hiroyuki",
     "katsura",
-    "hiroyuki",
-    "katsura",
-    "hiroyuki",
-    "katsura"
+    "yamagiwa",
+    "yamazaki"
   ]
 })

@@ -16,9 +16,7 @@
   relative: [
     "hiroyuki",
     "katsura",
-    "hiroyuki",
-    "katsura",
-    "hiroyuki",
-    "katsura"
+    "yamagiwa",
+    "yamazaki"
   ]
 })

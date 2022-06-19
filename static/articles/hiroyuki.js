@@ -4,7 +4,7 @@
   thumbnail: "/logo.png",
   color: "#fff",
   title: {
-    text: "テスト",
+    text: "ひろゆき",
     subtitle: "高校生の内に絶対これだけは知っておけ",
     date: "1970/1/1"
   },
@@ -18,11 +18,9 @@
     photo: "/logo.png"
   },
   relative: [
-    "katsura",
     "hiroyuki",
     "katsura",
-    "hiroyuki",
-    "katsura",
-    "hiroyuki"
+    "yamagiwa",
+    "yamazaki"
   ]
 })
