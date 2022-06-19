@@ -2,7 +2,6 @@
   name: "松原仁",
   sys_name: "matsubara",
   thumbnail: "/logo.png",
-  color: "#fff",
   title: {
     text: "松原仁",
     subtitle: "AI",

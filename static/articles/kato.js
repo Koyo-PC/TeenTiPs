@@ -2,7 +2,6 @@
   name: "加藤庸子",
   sys_name: "kato",
   thumbnail: "/logo.png",
-  color: "#dbf2ff",
   title: {
     text: "松尾豊さま",
     subtitle: "AI",

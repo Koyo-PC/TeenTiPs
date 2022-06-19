@@ -2,7 +2,6 @@
   name: "ひろゆき",
   sys_name: "hiroyuki",
   thumbnail: "/logo.png",
-  color: "#fff",
   title: {
     text: "ひろゆき",
     subtitle: "高校生の内に絶対これだけは知っておけ",

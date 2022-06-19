@@ -1,5 +1,5 @@
 <template>
-  <a class="article_card" :href="`/articles/${pageName}`" :style="{backgroundColor: color}">
+  <a class="article_card" :href="`/articles/${pageName}`">
     <img class="article_card_img" :alt="title" :src="thumbnail"/>
     <div class="article_card_content">
       <div class="sub">{{ subtitle }}</div>
@@ -18,8 +18,7 @@ export default {
       thumbnail: "",
       title: "",
       subtitle: "",
-      name: "",
-      color: ""
+      name: ""
     }
   },
   async beforeMount() {
@@ -29,7 +28,6 @@ export default {
     this.title = pageData.title.text;
     this.subtitle = pageData.title.subtitle;
     this.name = pageData.name;
-    this.color = pageData.color;
   }
 }
 </script>
@@ -44,6 +42,7 @@ export default {
   color: black;
   box-sizing: border-box;
   position: relative;
+  background-color: #eee;
 }
 
 .article_card_img {

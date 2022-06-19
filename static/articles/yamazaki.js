@@ -2,7 +2,6 @@
   name: "山崎直子",
   sys_name: "yamazaki",
   thumbnail: "/logo.png",
-  color: "#eaffd9",
   title: {
     text: "山崎直子さま",
     subtitle: "宇宙飛行士",
