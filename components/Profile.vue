@@ -32,7 +32,7 @@ export default {
 <style scoped>
   h2, p {
     display: block;
-    width: 90vw;
+    width: 100%;
     margin: 10px auto;
   }
   h2 {

@@ -166,7 +166,8 @@ export default {
   }
 
   article {
-    margin: 80px 0 0 0;
+    margin: 80px auto 0;
+    width: 80vw;
   }
 
 img {
@@ -176,7 +177,7 @@ img {
 
 h3, .quest, p {
   display: block;
-  width: 90%;
+  width: 100%;
   margin: 10px auto;
 }
 
