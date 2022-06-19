@@ -146,14 +146,14 @@ h3 {
 }
 
 .quest {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 700;
 }
 
 p {
   margin: 30px auto;
-  font-size: 13px;
-  line-height: 35px;
+  font-size: 14px;
+  line-height: 32px;
 }
 
 blockquote {
