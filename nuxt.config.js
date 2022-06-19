@@ -49,7 +49,8 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'nuxt-fontawesome'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -57,9 +58,20 @@ export default {
   generate: {
     routes: require(__dirname + "/static/data/pages.json").map(name => `/articles/${name}`)
   },
+
   loading: {
     color: 'blue',
     height: '5px',
     continuous: true
+  },
+
+  fontawesome: {
+    component: "fa",
+    imports: [
+      {
+        set: "@fortawesome/free-solid-svg-icons",
+        icons: ["faBars", "faXmark"]
+      }
+    ]
   }
 }
