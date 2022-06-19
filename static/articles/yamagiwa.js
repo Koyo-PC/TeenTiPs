@@ -1,5 +1,6 @@
 () => ({
   name: "山極壽一",
+  thumbnail: "/logo.png",
   title: {
     text: "山極壽一さま",
     subtitle: "ゴリラ研究",

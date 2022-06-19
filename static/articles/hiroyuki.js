@@ -1,5 +1,6 @@
 () => ({
   name: "ひろゆき",
+  thumbnail: "/logo.png",
   title: {
     text: "テスト",
     subtitle: "これはテストページです",
