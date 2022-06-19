@@ -7,7 +7,9 @@
       <div class="must_read_text"><span>今私たちが<br>10代のあなたたちに<br>伝えたい事</span></div>
       <a class="article_box" v-for="article in articles" :href="`/articles/${article.sys_name}`"
          :style="{backgroundColor: article.color}">
-        <img class="article_box_photo" :src="article.profile.photo" :alt="article.title.text">
+        <div class="article_box_photo_container">
+          <img class="article_box_photo" :src="article.profile.photo" :alt="article.title.text">
+        </div>
         <div class="article_box_content">
           <div class="article_box_content_container">
             <h3 class="article_box_content_name">{{ article.name }}</h3>
@@ -50,19 +52,20 @@ export default {
 
 .must_read_title {
   margin-left: 20px;
-  font-size: 40px;
+  font-size: 8vmin;
   font-weight: 900;
   color: rgb(255, 157, 148);
+  text-align: center;
 }
 
 .must_read_text {
   display: flex;
   width: 100%;
-  height: 300px;
+  height: 50vmin;
   position: relative;
-  font-size: 40px;
+  font-size: 6vmin;
   font-weight: 900;
-  letter-spacing: 10px;
+  letter-spacing: 1vmin;
   color: white;
   background-color: rgb(255, 157, 148);
   text-align: center;
@@ -85,38 +88,46 @@ export default {
 
 .article_box {
   display: flex;
-  height: 200px;
-  padding: 0 10%;
+  /*min-height: 200px;*/
+  padding: 0 20px;
   text-decoration: none;
   color: #666;
 }
 
+.article_box_photo_container {
+  display: flex;
+  max-width: 30%;
+  justify-content: center;
+  align-items: center;
+}
+
 .article_box_photo {
-  height: 100%;
+  max-height: 20vmax;
   aspect-ratio: 1;
   overflow: hidden;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .article_box_content {
   display: flex;
   width: 100%;
+  padding: 20px;
   justify-content: center;
   align-items: center;
 }
 
 .article_box_content_container {
   text-align: center;
+  min-width: 0;
 }
 
 .article_box_content_name {
   display: flex;
-  margin: 0;
+  margin: 20px 0;
   width: 100%;
-  top: 20px;
-  font-size: 50px;
+  font-size: 10vmin;
   font-weight: 700;
-  letter-spacing: 10px;
+  letter-spacing: 1vmin;
   /*color: white;*/
   justify-content: center;
   align-items: center;
@@ -124,9 +135,10 @@ export default {
 
 .article_box_content_subtitle {
   display: flex;
-  margin: 0;
+  margin: 20px 0;
   width: 100%;
   bottom: 20px;
+  font-size: 2vmax;
   justify-content: center;
   align-items: center;
 }
