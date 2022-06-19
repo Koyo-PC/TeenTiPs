@@ -1,7 +1,6 @@
 () => ({
   name: "桂福丸",
   sys_name: "katsura",
-  thumbnail: "/images/kh00.JPG",
   title: {
     text: "桂福丸さま",
     subtitle: "落語家",

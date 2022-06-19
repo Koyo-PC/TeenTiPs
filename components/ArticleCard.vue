@@ -1,6 +1,6 @@
 <template>
   <a class="article_card" :href="`/articles/${pageName}`">
-    <img class="article_card_img" :alt="title" :src="thumbnail"/>
+    <img class="article_card_img" :alt="title" :src="`/images/${sys_name}/thumbnail.webp`"/>
     <div class="article_card_content">
       <div class="sub">{{ subtitle }}</div>
     </div>
@@ -15,19 +15,19 @@ export default {
   props: ["pageName"],
   data() {
     return {
-      thumbnail: "",
       title: "",
       subtitle: "",
-      name: ""
+      name: "",
+      sys_name: ""
     }
   },
   async beforeMount() {
     console.log(this.pageName)
     const pageData = eval((await axios.get(`/articles/${this.pageName}.js`)).data)();
-    this.thumbnail = pageData.thumbnail;
     this.title = pageData.title.text;
     this.subtitle = pageData.title.subtitle;
     this.name = pageData.name;
+    this.sys_name = pageData.sys_name;
   }
 }
 </script>

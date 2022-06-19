@@ -7,7 +7,7 @@
       <div class="must_read_text"><span>今私たちが<br>10代のあなたたちに<br>伝えたい事</span></div>
       <a class="article_box" v-for="article in articles" :href="`/articles/${article.sys_name}`"
          :style="{backgroundColor: article.color}">
-          <img class="article_box_photo" :src="article.thumbnail" :alt="article.title.text">
+          <img class="article_box_photo" :src="`/images/${article.sys_name}/thumbnail.webp`" :alt="article.title.text">
       </a>
     </div>
     <Footer style="margin: 0;"></Footer>

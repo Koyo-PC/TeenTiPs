@@ -1,7 +1,6 @@
 () => ({
   name: "松原仁",
   sys_name: "matsubara",
-  thumbnail: "/logo.png",
   title: {
     text: "松原仁",
     subtitle: "AI",

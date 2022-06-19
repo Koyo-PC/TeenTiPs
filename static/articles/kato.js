@@ -1,7 +1,6 @@
 () => ({
   name: "加藤庸子",
   sys_name: "kato",
-  thumbnail: "/logo.png",
   title: {
     text: "松尾豊さま",
     subtitle: "AI",

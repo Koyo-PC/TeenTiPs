@@ -1,7 +1,6 @@
 () => ({
   name: "ひろゆき",
   sys_name: "hiroyuki",
-  thumbnail: "/logo.png",
   title: {
     text: "ひろゆき",
     subtitle: "高校生の内に絶対これだけは知っておけ",
