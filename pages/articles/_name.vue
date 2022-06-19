@@ -6,7 +6,7 @@
     <Top/>
     <article>
       <Title :content="pageData.title || {}"/>
-      <Profile :content="pageData.profile || {}"></Profile>
+      <Profile :content="pageData"></Profile>
       <Toc :content="tocData"></Toc>
       <div v-html="content"></div>
     </article>

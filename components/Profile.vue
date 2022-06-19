@@ -1,7 +1,7 @@
 <template>
   <div class="profile">
-    <h2>{{ title }}</h2>
-    <img alt="" :src="head"/>
+    <h2>{{ name }}さんのプロフィール</h2>
+    <img alt="" :src="photo"/>
     <p v-html="text">
     </p>
   </div>
@@ -15,15 +15,15 @@ export default {
     return {
       title: "",
       text: "",
-      head: ""
+      photo: ""
     }
   },
   watch: {
     content(value) {
       console.log(value)
-      this.title = value.title;
-      this.text = value.content.replaceAll("\n", "<br>");
-      this.head = value.head;
+      this.name = value.name;
+      this.text = value.profile.content.replaceAll("\n", "<br>");
+      this.photo = value.profile.photo;
     }
   }
 }

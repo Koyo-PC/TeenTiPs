@@ -25,7 +25,7 @@ export default {
     const pageData = eval((await axios.get(`/articles/${this.pageName}.js`)).data)();
     this.thumbnail = pageData.thumbnail;
     this.title = pageData.title.text;
-    this.subtitle = pageData.title.sub;
+    this.subtitle = pageData.title.subtitle;
   }
 }
 </script>
