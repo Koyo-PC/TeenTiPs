@@ -66,7 +66,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .bcpic {
   background-image: url(/logo.png);
   background-size: contain;
@@ -127,7 +127,7 @@ export default {
 
   article {
     margin: 80px auto 0;
-    width: 80vw;
+    width: 85vw;
   }
 
 img {
@@ -142,17 +142,17 @@ h3, .quest, p {
 }
 
 h3 {
-  font-size: 23px;
+  font-size: 20px;
 }
 
 .quest {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
 }
 
 p {
   margin: 30px auto;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 35px;
 }
 
