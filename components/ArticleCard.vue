@@ -1,8 +1,8 @@
 <template>
-  <a class="article_card" :href="`/articles/${pageName}`">
+  <a class="article_card" :href="`/articles/${pageName}`" :style="{backgroundColor: color}">
     <img class="article_card_img" :alt="title" :src="thumbnail"/>
     <div class="article_card_content">
-      {{ subtitle }}
+      <div class="sub">{{ subtitle }}</div>
     </div>
   </a>
 </template>
@@ -17,7 +17,9 @@ export default {
     return {
       thumbnail: "",
       title: "",
-      subtitle: ""
+      subtitle: "",
+      name: "",
+      color: ""
     }
   },
   async beforeMount() {
@@ -26,6 +28,8 @@ export default {
     this.thumbnail = pageData.thumbnail;
     this.title = pageData.title.text;
     this.subtitle = pageData.title.subtitle;
+    this.name = pageData.name;
+    this.color = pageData.color;
   }
 }
 </script>
@@ -34,20 +38,29 @@ export default {
 .article_card {
   display: block;
   width: 40%;
-  height: 150px;
+  /*height: 150px;*/
   margin: 8% auto 10%;
+  text-decoration: none;
+  color: black;
+  box-sizing: border-box;
+  position: relative;
 }
 
 .article_card_img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: calc(16 / 9);
+  aspect-ratio: calc(16 / 12);
   background-color: aqua;
   object-fit: cover;
 }
 
 .article_card_content {
   padding: 10px;
+}
+
+.sub {
+  /*background-color: green;*/
+  font-size: 15px;
 }
 </style>

@@ -135,6 +135,7 @@ blockquote {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  align-items: baseline;
 }
 
 h2 {
