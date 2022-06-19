@@ -2,8 +2,8 @@
 	<footer>
 		<img src="/logo.png" alt="">
 		<div class="address">
-			<a href="https://twitter.com/teentips2022">Twiiter:teentips2022</a>
-			<a href="mailto:teentips2004@gmail.com">E-mail:teentips2004@gmail.com</a>
+			<a href="https://twitter.com/teentips2022">Twiiter: teentips2022</a>
+			<a href="mailto:we.are.teentips@gmail.com">E-mail: we.are.teentips@gmail.com</a>
 		</div>
 	</footer>
 </template>
