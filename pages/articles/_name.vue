@@ -1,6 +1,7 @@
 <template>
   <div class="bcpic">
     <div id="loading" :class="loaded ? ['loaded'] : null">
+      <img  alt="" src="/logo.png"/>
       <div class="spinner"></div>
     </div>
     <Top/>
@@ -68,6 +69,17 @@ export default {
   height: 100vh;
   transition: all 1s;
   background-color: floralwhite;
+  overflow: hidden;
+}
+
+#loading > img {
+  position: absolute;
+  width: 100vmin;
+  height: 100vmin;
+  top: calc(50vh - 50vmin);
+  left: calc(50vw - 50vmin);
+  object-fit: contain;
+  transform: scale(1.2);
 }
 
 .spinner {
