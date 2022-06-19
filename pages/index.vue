@@ -67,7 +67,7 @@ export default {
   font-weight: 900;
   letter-spacing: 1vmin;
   color: white;
-  background-color: rgb(255, 157, 148);
+  background-color: rgb(255, 255, 255);
   text-align: center;
   justify-content: center;
   align-items: center;
