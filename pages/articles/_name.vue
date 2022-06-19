@@ -96,10 +96,10 @@ export default {
     z-index: -1;
   }
 
-  article {
-    margin: 80px auto 0;
-    width: 85vw;
-  }
+article {
+  margin: 80px auto 0;
+  width: 85vw;
+}
 
 img {
   width: 100%;
