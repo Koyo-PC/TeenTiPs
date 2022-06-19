@@ -10,47 +10,34 @@
       <button class="nav_menu_button" @click="menuClose()">
         <fa :icon="['fas', 'xmark']"/>
       </button>
-      <h1>このサイトについて</h1>
-      <h2>TeenTiPsとは?</h2>
-      <p>多くの高校生(Teen世代)の『可能性』の幅を広げるため、全国の高校の生徒会長で運営するWeb記事媒体</p>
-      <h2>運営メンバー</h2>
       <ul>
-        <li v-for="member in members"><img :src="`/images/members/${member.sys_name}.webp`">{{ member.name }}</li>
-      </ul>
-      <h2>Webページ制作</h2>
-      <ul>
-        <li>南出　孝明</li>
-        <li>川添　晴翔</li>
+        <li><a href="/">トップページ</a></li>
+        <li><a href="/about">TeenTiPsとは?</a></li>
+        <li><span>記事一覧</span></li>
+        <li>
+          <ul>
+            <li v-for="article in articles"><a :href="`/articles/${article.sys_name}`">{{ article.name }}</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
+    <div :class="menuOpening ? ['nav_menu_bg','opening'] : ['nav_menu_bg']" @click="menuClose()"></div>
   </nav>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
       menuOpening: false,
-      members: [
-        {name: "近藤　亘", sys_name: "kondo_wataru"},
-        {name: "清水　崇源", sys_name: "shimizu"},
-        {name: "東　　倫子", sys_name: "higashi"},
-        {name: "城野　光喜", sys_name: "sirono"},
-        {name: "髙島　咲弥花", sys_name: "takashima"},
-        {name: "播磨　正樹", sys_name: "harima"},
-        {name: "中村　礼", sys_name: "nakamura"},
-        {name: "田畑　聡大", sys_name: "tabata"},
-        {name: "増山　由紀子", sys_name: "masuyama"},
-        {name: "近藤　亮介", sys_name: "kondo_ryousuke"},
-        {name: "大山　颯斗", sys_name: "ooyama"},
-        {name: "湯徳　翼", sys_name: "yutoku"},
-        {name: "岡田　琉依", sys_name: "okada"},
-        {name: "田口　壱星", sys_name: "taguti"},
-        {name: "猪口　昴太", sys_name: "inokuti"}
-      ]
+      articles: [],
     }
-  }
-  ,
+  },
+  async beforeMount() {
+    this.articles = await Promise.all((await axios.get(`/data/pages.json`)).data.map(async name => eval((await axios.get(`/articles/${name}.js`)).data)()));
+  },
   methods: {
     menuOpen() {
       this.menuOpening = true;
@@ -91,35 +78,107 @@ img {
 }
 
 .nav_menu {
-  padding: 5vh 12vh;
+  padding: 5vh 8vh;
   width: auto;
   height: auto;
   position: fixed;
-  top: -100%;
-  right: 0;
-  bottom: 100%;
-  left: 0;
+  top: 0;
+  right: 100%;
+  bottom: 0;
+  left: -400px;
   z-index: 99999;
   backdrop-filter: blur(0);
-  transition-duration: 1s;
+  transition-duration: .5s;
   overflow-x: scroll;
 }
 
 .nav_menu.opening {
   background-color: #eeec;
-  top: 0;
-  bottom: 0;
+  right: calc(100% - 400px);
+  left: 0;
   backdrop-filter: blur(5px);
 }
 
 .nav_menu > ul > li {
   display: flex;
   align-items: center;
+  width: 100%;
+  min-height: 40px;
 }
 
-.nav_menu > ul > li > img {
-  width: 50px;
-  height: 50px;
-  margin-right: 20px;
+.nav_menu > ul > li > * {
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
 }
+
+.nav_menu > ul > li > a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #666666;
+  background-color: transparent;
+  transition-duration: .1s;
+  padding: 20px;
+}
+
+.nav_menu > ul > li > a:hover {
+  background-color: #aaa8;
+}
+
+.nav_menu > ul > li > ul {
+  list-style: none;
+  padding: 0 0 0 50px;
+}
+
+.nav_menu > ul > li > ul > li {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 30px;
+}
+
+.nav_menu > ul > li > ul > li > * {
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.nav_menu > ul > li > ul > li > a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #666666;
+  background-color: transparent;
+  transition-duration: .1s;
+  padding: 20px;
+}
+
+.nav_menu > ul > li > ul > li > a:hover {
+  background-color: #aaa8;
+}
+
+.nav_menu_bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #6668;
+  z-index: -10;
+  opacity: 0;
+  transition-duration: .5s;
+}
+
+.nav_menu_bg.opening {
+  opacity: 100%;
+  z-index: 9999;
+}
+
 </style>

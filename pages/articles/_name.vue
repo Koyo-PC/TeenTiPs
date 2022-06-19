@@ -1,8 +1,6 @@
 <template>
   <div>
-
-    <img class="bc" src="/logo.png" alt="">
-
+    <BackLogo></BackLogo>
     <Loading :loaded="loaded"></Loading>
     <Top/>
     <article>
@@ -24,8 +22,10 @@
 <script>
 import {marked} from "marked";
 import axios from "axios";
+import BackLogo from "../../components/BackLogo";
 
 export default {
+  components: {BackLogo},
   head() {
     // console.log(this.pageData.title.text);
     const pageInfo = {
@@ -77,14 +77,6 @@ export default {
 </script>
 
 <style>
-
-.bc {
-  position: fixed;
-  z-index: -1;
-  top: 50%;
-  transform: translate(0, -55%);
-  filter: blur(.75vw) opacity(20%);
-}
 
 article {
   margin: 80px auto 0;

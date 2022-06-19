@@ -43,7 +43,6 @@ export default {
 }
 
 .must_read_title {
-  margin-left: 20px;
   font-size: 8vmin;
   font-weight: 900;
   color: rgb(255, 157, 148);
