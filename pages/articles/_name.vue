@@ -28,10 +28,15 @@ import axios from "axios";
 export default {
   head() {
     // console.log(this.pageData.title.text);
+    const pageInfo = {
+      name: `${this.pageData.title?.text} - TeenTiPs`,
+      description: this.pageData.title?.subtitle
+    }
     return {
-      title: `${this.pageData.title?.text} - TeenTiPs`,
+      title: pageInfo.name,
       meta: [
-        {hid: 'description', name: 'description', content: this.pageData.title?.subtitle},
+        {hid: 'og:title', property: 'og:title', content: pageInfo.name},
+        {hid: 'description', name: 'description', content: pageInfo.description},
       ]
     }
   },
