@@ -7,15 +7,7 @@
       <div class="must_read_text"><span>今私たちが<br>10代のあなたたちに<br>伝えたい事</span></div>
       <a class="article_box" v-for="article in articles" :href="`/articles/${article.sys_name}`"
          :style="{backgroundColor: article.color}">
-        <div class="article_box_photo_container">
-          <img class="article_box_photo" :src="article.profile.photo" :alt="article.title.text">
-        </div>
-        <div class="article_box_content">
-          <div class="article_box_content_container">
-            <h3 class="article_box_content_name">{{ article.name }}</h3>
-            <span class="article_box_content_subtitle">{{ article.title.subtitle }}</span>
-          </div>
-        </div>
+          <img class="article_box_photo" :src="article.thumbnail" :alt="article.title.text">
       </a>
     </div>
     <Footer style="margin: 0;"></Footer>
@@ -90,58 +82,23 @@ export default {
 .article_box {
   display: flex;
   /*min-height: 200px;*/
-  padding: 0 20px;
+  padding: 0;
   text-decoration: none;
   color: #666;
 }
 
-.article_box_photo_container {
-  display: flex;
-  max-width: 30%;
-  justify-content: center;
-  align-items: center;
-}
-
 .article_box_photo {
-  max-height: 20vmax;
-  aspect-ratio: 1;
+  position: relative;
+  aspect-ratio: calc(21 / 9);
   overflow: hidden;
-  object-fit: contain;
+  object-fit: cover;
 }
 
-.article_box_content {
-  display: flex;
-  width: 100%;
-  padding: 20px;
-  justify-content: center;
-  align-items: center;
-}
-
-.article_box_content_container {
-  text-align: center;
-  min-width: 0;
-}
-
-.article_box_content_name {
-  display: flex;
-  margin: 20px 0;
-  width: 100%;
-  font-size: 10vmin;
-  font-weight: 700;
-  letter-spacing: 1vmin;
-  /*color: white;*/
-  justify-content: center;
-  align-items: center;
-}
-
-.article_box_content_subtitle {
-  display: flex;
-  margin: 20px 0;
-  width: 100%;
-  bottom: 20px;
-  font-size: 2vmax;
-  justify-content: center;
-  align-items: center;
+.article_box_photo:after {
+  content: "記事を読む >>";
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
 .article_box_content_subtitle:before, .article_box_content_subtitle:after {
