@@ -1,6 +1,8 @@
 () => ({
   name: "山極壽一",
+  sys_name: "yamagiwa",
   thumbnail: "/logo.png",
+  color: "#ffdaea",
   title: {
     text: "山極壽一さま",
     subtitle: "ゴリラ研究",

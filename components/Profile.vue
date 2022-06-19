@@ -13,7 +13,7 @@ export default {
   props: ["content"],
   data() {
     return {
-      title: "",
+      name: "",
       text: "",
       photo: ""
     }

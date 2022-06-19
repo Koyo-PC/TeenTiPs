@@ -1,9 +1,11 @@
 () => ({
   name: "ひろゆき",
+  sys_name: "hiroyuki",
   thumbnail: "/logo.png",
+  color: "#fff",
   title: {
     text: "テスト",
-    subtitle: "これはテストページです",
+    subtitle: "高校生の内に絶対これだけは知っておけ",
     date: "1970/1/1"
   },
   profile: {
