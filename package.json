@@ -17,6 +17,7 @@
     "nuxt-fontawesome": "^0.4.0"
   },
   "devDependencies": {
+    "@nuxtjs/google-analytics": "^2.4.0",
     "axios": "^0.21.4"
   }
 }
