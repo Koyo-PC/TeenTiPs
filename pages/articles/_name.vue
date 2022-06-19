@@ -26,6 +26,15 @@ import {marked} from "marked";
 import axios from "axios";
 
 export default {
+  head() {
+    // console.log(this.pageData.title.text);
+    return {
+      title: `${this.pageData.title?.text} - TeenTiPs`,
+      meta: [
+        {hid: 'description', name: 'description', content: this.pageData.title.subtitle},
+      ]
+    }
+  },
   data() {
     return {
       content: "loading...",

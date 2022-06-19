@@ -1,3 +1,8 @@
+const pageInfo = {
+  name: "TeenTiPs",
+  url: "https://example.com/", // 「/」で終わる
+  description: "多くの高校生(Teen世代)の「可能性」の幅を広げるため、全国の高校の生徒会長で運営するWeb記事媒体「TeenTiPs」"
+} // TODO
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -6,13 +11,21 @@ export default {
   head: {
     title: 'TeenTiPs',
     htmlAttrs: {
-      lang: 'ja'
+      lang: 'ja',
+      prefix: 'og: http://ogp.me/ns#'
     },
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: ''},
-      {name: 'format-detection', content: 'telephone=no'}
+      {hid: 'description', name: 'description', content: pageInfo.description},
+      {name: 'format-detection', content: 'telephone=no'},
+      {hid: 'og:site_name', property: 'og:site_name', content: pageInfo.name},
+      {hid: 'og:type', property: 'og:type', content: 'website'},
+      {hid: 'og:url', property: 'og:url', content: pageInfo.url},
+      {hid: 'og:title', property: 'og:title', content: pageInfo.name},
+      {hid: 'og:description', property: 'og:description', content: pageInfo.description},
+      {hid: 'og:image', property: 'og:image', content: `${pageInfo.url}logo.png`},
+      {name: 'twitter:card', content: 'summary'}
     ],
     link: [
       {rel: 'icon', type: 'image/png', href: '/images/favicon.png'}
