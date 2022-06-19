@@ -51,7 +51,6 @@ export default {
   width: 100%;
   height: auto;
   aspect-ratio: calc(16 / 12);
-  background-color: aqua;
   object-fit: cover;
 }
 

@@ -1,5 +1,8 @@
 <template>
-  <div class="bcpic">
+  <div>
+
+    <img class="bc" src="/logo.png" alt="">
+
     <Loading :loaded="loaded"></Loading>
     <Top/>
     <article>
@@ -9,7 +12,7 @@
       <div v-html="content"></div>
     </article>
     <hr>
-    <h2>Related Articles</h2>
+    <h2 style="color: rgb(255, 157, 148);">Related Articles</h2>
     <div class="relative_articles">
       <ArticleCard v-for="page in pageData.relative" :pageName="page"></ArticleCard>
     </div>
@@ -67,34 +70,14 @@ export default {
 </script>
 
 <style>
-  .bcpic {
-    background-image: url(/logo.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-color: rgba(255, 255, 255, .85);
-    background-blend-mode: lighten;
-    position: relative;
-    z-index: 0;
-  }
-  .bcpic:before {
-    content: "";
-    background-color: rgba(255, 255, 255, .85);
-    background-blend-mode: lighten;
-    background: inherit;
-    filter: blur(3px);
-    -webkit-filter: blur(3px);
-    -moz-filter: blur(3px);
-    -o-filter: blur(3px);
-    -ms-filter: blur(3px);
-    position: absolute;
-    top: -3px;
-    left: -3px;
-    right: 3px;
-    bottom: 3px;
-    z-index: -1;
-  }
+ 
+.bc {
+  position: fixed;
+  z-index: -1;
+  top: 50%;
+  transform: translate(0, -55%);
+  filter: blur(5px) opacity(40%);
+}
 
 article {
   margin: 80px auto 0;
@@ -142,5 +125,6 @@ h2 {
   display: block;
   margin: 0 auto;
   width: 90%;
+  /*color: rgb(255, 157, 148);*/
 }
 </style>

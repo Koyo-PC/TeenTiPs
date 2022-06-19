@@ -12,7 +12,7 @@
 	footer	{
 		display: inline-block;
 		width: 100%;
-		background-color: rgb(252, 245, 230);
+		background-color: mediumblue;
 		margin: 10% 0 0 0;
 		padding: 5% 0;
 	}
