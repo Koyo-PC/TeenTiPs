@@ -78,7 +78,7 @@ export default {
   z-index: -1;
   top: 50%;
   transform: translate(0, -55%);
-  filter: blur(5px) opacity(40%);
+  filter: blur(.75vw) opacity(20%);
 }
 
 article {
