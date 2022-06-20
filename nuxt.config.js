@@ -1,6 +1,6 @@
 const pageInfo = {
   name: "TeenTiPs",
-  url: "https://example.com/", // 「/」で終わる
+  url: "https://watarukondo.com/", // 「/」で終わる
   description: "多くの高校生(Teen世代)の「可能性」の幅を広げるため、全国の高校の生徒会長で運営するWeb記事媒体「TeenTiPs」"
 } // TODO
 export default {
