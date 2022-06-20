@@ -93,6 +93,7 @@ export default {
   right: 20px;
   font-weight: 700;
   font-size: 2vw;
+  text-shadow: #fff 0 0 .5vw;
 }
 
 .article_box_photo {
