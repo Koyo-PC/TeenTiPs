@@ -80,6 +80,7 @@ img {
 .nav_menu {
   padding: 5vh 8vh;
   width: auto;
+  max-width: 100%;
   height: auto;
   position: fixed;
   top: 0;
