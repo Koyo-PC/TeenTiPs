@@ -2,9 +2,9 @@
   name: "松尾豊",
   sys_name: "matsuo",
   title: {
-    text: "松尾豊さま",
+    text: "松尾豊",
     subtitle: "AI",
-    date: "1970/1/1"
+    date: "2022/06/21"
   },
   profile: {
     content: `1997年 東京大学工学部電子情報工学科卒業

@@ -4,7 +4,7 @@
   title: {
     text: "ひろゆき",
     subtitle: "高校生の内に絶対これだけは知っておけ",
-    date: "1970/1/1"
+    date: "2022/06/21"
   },
   profile: {
     content: `本名・西村博之。
