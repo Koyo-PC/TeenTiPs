@@ -45,14 +45,13 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    '@nuxtjs/google-analytics'
-  ],
+  buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
-    'nuxt-fontawesome'
+    'nuxt-fontawesome',
+    '@nuxtjs/google-gtag'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -77,7 +76,8 @@ export default {
     ]
   },
 
-  googleAnalytics: {
-    id: 'UA-XXX-X'
+  'google-gtag': {
+    id: 'G-5JHR5844L7',
+    debug: true
   }
 }
