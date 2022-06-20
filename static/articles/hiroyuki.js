@@ -2,8 +2,8 @@
   name: "ひろゆき",
   sys_name: "hiroyuki",
   title: {
-    text: "ひろゆき",
-    subtitle: "高校生の内に絶対これだけは知っておけ",
+    text: "西村博之",
+    subtitle: "根拠のない自信を持て",
     date: "2022/06/21"
   },
   profile: {

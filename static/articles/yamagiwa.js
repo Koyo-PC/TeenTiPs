@@ -2,8 +2,8 @@
   name: "山極壽一",
   sys_name: "yamagiwa",
   title: {
-    text: "山極壽一さま",
-    subtitle: "ゴリラ研究",
+    text: "山極壽一",
+    subtitle: "日本の社会は、君たちにかかっている",
     date: "2022/06/21"
   },
   profile: {

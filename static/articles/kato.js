@@ -3,7 +3,7 @@
   sys_name: "kato",
   title: {
     text: "加藤庸子",
-    subtitle: "AI",
+    subtitle: "命を預かるプロフェッショナル",
     date: "2022/06/21"
   },
   profile: {
