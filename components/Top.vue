@@ -55,7 +55,7 @@ nav {
   width: 100%;
   height: 12vh;
   position: relative;
-  background-color: mediumblue;
+  background-color: rgb(221, 238, 255);
   display: flex;
   justify-content: space-around;
   align-items: center;
