@@ -89,7 +89,6 @@ export default {
 .article_box_photo {
   position: relative;
   width: 100%;
-  aspect-ratio: calc(21 / 9);
   overflow: hidden;
   object-fit: cover;
 }
