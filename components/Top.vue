@@ -12,8 +12,8 @@
       </button>
       <ul>
         <li><a href="/">トップページ</a></li>
-        <li><a href="/about">TeenTiPsとは?</a></li>
-        <li><span>記事一覧</span></li>
+        <li><a href="/about">★ TeenTiPsとは?</a></li>
+        <li><span>★ 記事一覧</span></li>
         <li>
           <ul>
             <li v-for="article in articles"><a :href="`/articles/${article.sys_name}`">{{ article.name }}</a></li>
