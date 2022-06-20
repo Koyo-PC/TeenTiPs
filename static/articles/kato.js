@@ -2,7 +2,7 @@
   name: "加藤庸子",
   sys_name: "kato",
   title: {
-    text: "松尾豊さま",
+    text: "加藤庸子",
     subtitle: "AI",
     date: "1970/1/1"
   },
