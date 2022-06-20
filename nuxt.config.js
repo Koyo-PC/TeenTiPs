@@ -45,7 +45,19 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: [
+    [
+      '@nuxtjs/google-fonts',
+      {
+        families: {
+          "Noto Sans JP":  [ 300, 400, 700, 900],
+          "Open Sans":  [300, 600, 700, 800]
+        },
+        display: 'swap',
+        download: false
+      }
+    ]
+  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
