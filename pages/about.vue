@@ -34,7 +34,7 @@ export default {
         {name: "播磨　正樹", sys_name: "harima"},
         {name: "中村　礼", sys_name: "nakamura"},
         {name: "田畑　聡大", sys_name: "tabata"},
-        {name: "増山　由紀子", sys_name: "masuyama"},
+        {name: "増山　由紀子", sys_name: "masiyama"},
         {name: "近藤　亮介", sys_name: "kondo_ryousuke"},
         {name: "大山　颯斗", sys_name: "ooyama"},
         {name: "湯徳　翼", sys_name: "yutoku"},
