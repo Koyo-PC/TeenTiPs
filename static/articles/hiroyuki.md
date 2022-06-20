@@ -143,8 +143,6 @@
 
 >ありがとうございました。
 
-<!-- >**切り抜き動画** -->
-
 <p style="font-size: 20px; font-weight: 700;">切り抜き動画</p>
 
 <iframe src="https://www.youtube.com/embed/5GUaMOpfmr8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
