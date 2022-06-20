@@ -84,6 +84,15 @@ export default {
   padding: 0;
   text-decoration: none;
   color: #666;
+  position: relative;
+}
+.article_box:after {
+  content: "TAP HERE >>";
+  position: absolute;
+  bottom: 5%;
+  right: 20px;
+  font-weight: 700;
+  font-size: 2vw;
 }
 
 .article_box_photo {
