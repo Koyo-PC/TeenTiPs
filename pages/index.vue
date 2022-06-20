@@ -88,16 +88,10 @@ export default {
 
 .article_box_photo {
   position: relative;
+  width: 100%;
   aspect-ratio: calc(21 / 9);
   overflow: hidden;
   object-fit: cover;
-}
-
-.article_box_photo:after {
-  content: "記事を読む >>";
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
 }
 
 .article_box_content_subtitle:before, .article_box_content_subtitle:after {
