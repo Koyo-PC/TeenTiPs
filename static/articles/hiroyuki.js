@@ -13,6 +13,6 @@
 2006年、「ニコニコ動画」を開始し、大反響を呼ぶ。
 2015年に英語圏最大の匿名掲示板「4chan」の管理人になる。
 （参考）https://onl.bz/VNZkCwc`,
-    photo: "/logo.png"
+    photo: "/images/hiroyuki/2.webp"
   }
 })
