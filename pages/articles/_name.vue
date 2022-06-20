@@ -29,8 +29,8 @@ export default {
   head() {
     // console.log(this.pageData.title.text);
     const pageInfo = {
-      name: `${this.pageData.title?.text} - TeenTiPs`,
-      description: this.pageData.title?.subtitle
+      name: `${this.pageData.title?.text || ""} - TeenTiPs`,
+      description: this.pageData.title?.subtitle || ""
     }
     return {
       title: pageInfo.name,
