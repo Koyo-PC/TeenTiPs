@@ -126,4 +126,10 @@ h2 {
   width: 90%;
   /*color: rgb(255, 157, 148);*/
 }
+
+iframe {
+  width: 100%;
+  height: calc(45vw);
+  margin: 0 0 15%;
+}
 </style>
