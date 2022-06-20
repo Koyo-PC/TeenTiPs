@@ -1,5 +1,10 @@
 # Koyo_Tips
 
+webp 変換
+```bash
+$ for f in *.jpg; do ffmpeg -y -i "$f" "${f%.jpg}.webp"; rm "$f"; done; for f in *.JPG; do ffmpeg -y -i "$f" "${f%.JPG}.webp"; rm "$f"; done; for f in *.png; do ffmpeg -y -i "$f" "${f%.png}.webp"; rm "$f"; done; for f in *.PNG; do ffmpeg -y -i "$f" "${f%.PNG}.webp"; rm "$f"; done
+```
+
 ## Build Setup
 
 ```bash
