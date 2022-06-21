@@ -3,7 +3,7 @@
   sys_name: "narita",
   title: {
     text: "成田悠輔",
-    subtitle: "データ",
+    subtitle: "データから考えるこれからの時代の生き抜き方",
     date: "2022/06/21"
   },
   profile: {

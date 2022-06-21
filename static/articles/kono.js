@@ -3,7 +3,7 @@
   sys_name: "kono",
   title: {
     text: "河野太郎",
-    subtitle: "政治家",
+    subtitle: "君たちに日本の仕組みを教えてやろう",
     date: "2022/??/??"
   },
   profile: {

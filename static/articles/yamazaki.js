@@ -3,7 +3,7 @@
   sys_name: "yamazaki",
   title: {
     text: "山崎直子",
-    subtitle: "宇宙飛行士",
+    subtitle: "日本人女性2人目の宇宙飛行士",
     date: "2022/06/21"
   },
   profile: {

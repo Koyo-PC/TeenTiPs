@@ -3,7 +3,7 @@
   sys_name: "katsura",
   title: {
     text: "桂福丸",
-    subtitle: "落語家",
+    subtitle: "世界を股にかけて挑戦を続ける落語家",
     date: "2022/06/21"
   },
   profile: {

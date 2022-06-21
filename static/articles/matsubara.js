@@ -3,7 +3,7 @@
   sys_name: "matsubara",
   title: {
     text: "松原仁",
-    subtitle: "AI",
+    subtitle: "高校生に問う 本当の意味でのAI時代を知っているか?",
     date: "2022/06/21"
   },
   profile: {

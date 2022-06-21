@@ -3,7 +3,7 @@
   sys_name: "matsuo",
   title: {
     text: "松尾豊",
-    subtitle: "AI",
+    subtitle: "日本のAIの第一人者",
     date: "2022/06/21"
   },
   profile: {
