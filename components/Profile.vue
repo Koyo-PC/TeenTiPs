@@ -1,8 +1,8 @@
 <template>
   <div class="profile">
-    <h2>{{ name }}さんのプロフィール</h2>
-    <img alt="" :src="photo"/>
-    <p v-html="text">
+    <h2>{{ content.name }}さんのプロフィール</h2>
+    <img alt="" :src="content.photo"/>
+    <p v-html="content.profile">
     </p>
   </div>
 </template>
@@ -10,22 +10,7 @@
 <script>
 export default {
   name: "Profile",
-  props: ["content"],
-  data() {
-    return {
-      name: "",
-      text: "",
-      photo: ""
-    }
-  },
-  watch: {
-    content(value) {
-      console.log(value)
-      this.name = value.name;
-      this.text = value.profile.content.replaceAll("\n", "<br>");
-      this.photo = value.profile.photo;
-    }
-  }
+  props: ["content"]
 }
 </script>
 

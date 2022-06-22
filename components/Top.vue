@@ -16,7 +16,7 @@
         <li><span>★ 記事一覧</span></li>
         <li>
           <ul>
-            <li v-for="article in articles"><a :href="`/articles/${article.sys_name}`">{{ article.name }}</a></li>
+            <li v-for="(page, name) in pages"><a :href="`/articles/${name}`">{{ page.name }}</a></li>
           </ul>
         </li>
       </ul>
@@ -27,16 +27,16 @@
 
 <script>
 import axios from "axios";
+import pages from "~/assets/data/pages.js";
+
+console.log("aaa: " + pages.hiroyuki)
 
 export default {
   data() {
     return {
       menuOpening: false,
-      articles: [],
+      pages,
     }
-  },
-  async beforeMount() {
-    this.articles = await Promise.all((await axios.get(`/data/pages.json`)).data.map(async name => eval((await axios.get(`/articles/${name}.js`)).data)()));
   },
   methods: {
     menuOpen() {

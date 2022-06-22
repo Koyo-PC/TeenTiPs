@@ -2,7 +2,7 @@ const pageInfo = {
   name: "TeenTiPs",
   url: "https://watarukondo.com/", // 「/」で終わる
   description: "多くの高校生(Teen世代)の「可能性」の幅を広げるため、全国の高校の生徒会長で運営するWeb記事媒体「TeenTiPs」"
-} // TODO
+}
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -69,7 +69,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   generate: {
-    routes: require(__dirname + "/static/data/pages.json").map(name => `/articles/${name}`)
+    routes: Object.keys((async () => await import(__dirname + "/assets/data/pages.js"))()).map((name) => `/articles/${name}`)
   },
 
   loading: {

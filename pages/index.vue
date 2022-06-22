@@ -5,9 +5,8 @@
     <div class="must_read">
       <h2 class="must_read_title">MUST READ</h2>
       <div class="must_read_text"><span>今私たちが<br>10代のあなたたちに<br>伝えたい事</span></div>
-      <a class="article_box" v-for="article in articles" :href="`/articles/${article.sys_name}`"
-         :style="{backgroundColor: article.color}">
-          <img class="article_box_photo" :src="`/images/${article.sys_name}/thumbnail.webp`" :alt="article.title.text">
+      <a class="article_box" v-for="(page, name) in pages" :href="`/articles/${name}`">
+          <img class="article_box_photo" :src="`/images/${name}/thumbnail.webp`" :alt="page.title">
       </a>
     </div>
     <Footer style="margin: 0;"></Footer>
@@ -15,19 +14,16 @@
 </template>
 
 <script>
-import axios from "axios";
-import Footer from "../components/Footer";
+import pages from "~/assets/data/pages.js";
 
 export default {
-  components: {Footer},
   data() {
     return {
-      articles: [],
+      pages,
       loaded: false
     }
   },
-  async beforeMount() {
-    this.articles = await Promise.all((await axios.get(`/data/pages.json`)).data.map(async name => eval((await axios.get(`/articles/${name}.js`)).data)()));
+  mounted() {
     this.loaded = true;
   },
 }

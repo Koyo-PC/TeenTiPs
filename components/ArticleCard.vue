@@ -1,9 +1,9 @@
 <template>
-  <a class="article_card" :href="`/articles/${pageName}`">
-    <img class="article_card_img" :alt="title" :src="`/images/${sys_name}/thumbnail.webp`"/>
+  <a class="article_card" :href="`/articles/${name}`">
+    <img class="article_card_img" :alt="page.title" :src="`/images/${name}/thumbnail.webp`"/>
     <div class="article_card_content">
-      <span class="name">{{ name }}</span>
-      <span class="sub"><span>{{ subtitle }}</span></span>
+      <span class="name">{{ page.name }}</span>
+      <span class="sub"><span>{{ page.subtitle }}</span></span>
     </div>
   </a>
 </template>
@@ -13,23 +13,7 @@ import axios from "axios";
 
 export default {
   name: "ArticleCard",
-  props: ["pageName"],
-  data() {
-    return {
-      title: "",
-      subtitle: "",
-      name: "",
-      sys_name: ""
-    }
-  },
-  async beforeMount() {
-    console.log(this.pageName)
-    const pageData = eval((await axios.get(`/articles/${this.pageName}.js`)).data)();
-    this.title = pageData.title.text;
-    this.subtitle = pageData.title.subtitle;
-    this.name = pageData.name;
-    this.sys_name = pageData.sys_name;
-  }
+  props: ["name", "page"],
 }
 </script>
 

@@ -4,15 +4,15 @@
     <Loading :loaded="loaded"></Loading>
     <Top/>
     <article>
-      <Title :content="pageData.title || {}"/>
-      <Profile :content="pageData"></Profile>
+      <Title :content="pages[name]"/>
+      <Profile :content="pages[name]"></Profile>
       <Toc :content="tocData"></Toc>
       <div v-html="content"></div>
     </article>
     <hr>
     <h2 style="color: rgb(255, 157, 148);">Other Articles</h2>
     <div class="other_articles">
-      <ArticleCard v-for="page in articles" v-if="page !== pageData.sys_name" :pageName="page"></ArticleCard>
+      <ArticleCard v-for="(page, pageName) in pages" v-if="name !== pageName" :name="pageName" :page="page"></ArticleCard>
     </div>
 
     <Footer />
@@ -22,15 +22,13 @@
 <script>
 import {marked} from "marked";
 import axios from "axios";
-import BackLogo from "../../components/BackLogo";
+import pages from "~/assets/data/pages.js";
 
 export default {
-  components: {BackLogo},
   head() {
-    // console.log(this.pageData.title.text);
     const pageInfo = {
-      name: `${this.pageData.title?.text || ""} - TeenTiPs`,
-      description: this.pageData.title?.subtitle || ""
+      name: `${pages[this.name].title || ""} - TeenTiPs`,
+      description: pages[this.name].subtitle
     }
     return {
       title: pageInfo.name,
@@ -44,15 +42,13 @@ export default {
     return {
       content: "loading...",
       tocData: [],
-      pageData: {},
-      articles: {},
+      name: this.$route.params.name,
+      pages,
       loaded: false
     }
   },
   async beforeMount() {
-    this.pageData = eval((await axios.get(`/articles/${this.$route.params.name}.js`)).data)();
-
-    const mdContent = (await axios.get(`/articles/${this.$route.params.name}.md`)).data;
+    const mdContent = (await axios.get(`/articles/${this.name}.md`)).data;
 
     const tocData = [];
     const renderer = new marked.Renderer();
@@ -70,7 +66,6 @@ export default {
     marked.setOptions({breaks: true})
     this.content = marked.parse(mdContent, {renderer: renderer});
     this.tocData = tocData;
-    this.articles = (await axios.get(`/data/pages.json`)).data;
     this.loaded = true;
   },
 }

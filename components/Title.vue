@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <h2>【Girl in STEM】理系分野での女性の可能性を広げるために。宇宙飛行士・山崎直子さんと考える進路のエンパワメント</h2> -->
-    <h2>{{ content.text }}</h2>
+    <h2>{{ content.title }}</h2>
     <!-- <span>宇宙に興味がある女の子は多くても、キャリアや進路で選択する人はごく僅か。そのジェンダーギャップの要因はどこに？</span> -->
     <span>{{ content.subtitle }}</span>
     <p>{{ content.date }}</p>
