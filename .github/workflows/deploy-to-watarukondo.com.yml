@@ -1,4 +1,4 @@
-name: Deploy to watarukondo.com
+name: Deploy to watarukond.com
 
 on:
   push:
