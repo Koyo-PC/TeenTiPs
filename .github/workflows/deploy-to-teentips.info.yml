@@ -1,4 +1,4 @@
-name: Deploy to watarukondo.com
+name: Deploy to teentips.info
 
 on:
   push:
@@ -44,4 +44,4 @@ jobs:
         run: npm run generate
 
       - name: Deploy
-        run: rsync --checksum -av --delete -e "ssh -i ~/.ssh/id_ed25519 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./dist/* tips@watarukondo.com:/var/www/tips
+        run: rsync --checksum -av --delete -e "ssh -i ~/.ssh/id_ed25519 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./dist/* tips@teentips.info:/var/www/tips
