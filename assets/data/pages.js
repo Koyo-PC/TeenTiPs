@@ -37,7 +37,7 @@ export default {
   kono: {
     name: "河野太郎",
     title: "河野太郎",
-    subtitle: "君たちに日本の仕組みを教えてやろう",
+    subtitle: "日本を前に進める。温もりのある国へ",
     date: "2022/??/??",
     profile: ``,
     photo: null
