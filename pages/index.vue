@@ -95,7 +95,7 @@ export default {
 
 .article_box_photo {
   position: relative;
-  max-width: 100%;
+  width: 100%;
   overflow: hidden;
   object-fit: cover;
 }
