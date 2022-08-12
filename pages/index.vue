@@ -81,6 +81,7 @@ export default {
   text-decoration: none;
   color: #666;
   position: relative;
+  aspect-ratio: 1920 / 800;
 }
 .article_box:after {
   content: "TAP HERE >>";
