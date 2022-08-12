@@ -99,6 +99,7 @@ export default {
   width: 100%;
   overflow: hidden;
   object-fit: cover;
+  aspect-ratio: 1920 / 800;
 }
 
 .article_box_content_subtitle:before, .article_box_content_subtitle:after {
