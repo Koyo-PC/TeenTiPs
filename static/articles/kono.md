@@ -1,5 +1,5 @@
 <div class="kono_center">近日公開予定</div>
-<div class="kono_sub">参議院選挙後の公開を予定しています</div>
+<div class="kono_sub">準備が整い次第、公開致します</div>
 <style>
 .kono_center {
   color: rgb(189,61,61);
