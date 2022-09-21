@@ -38,9 +38,15 @@ export default {
     name: "河野太郎",
     title: "河野太郎",
     subtitle: "日本を前に進める。温もりのある国へ",
-    date: "2022/??/??",
-    profile: ``,
-    photo: null
+    date: "2022/8/20",
+    profile: `1963年1月10日 神奈川県平塚市に生まれる
+1981年3月 慶応義塾高校卒業
+1985年12月 米国ジョージタウン大学卒業
+1986年2月 富士ゼロックス株式会社入社
+1996年10月20日 第41回衆議院総選挙にて神奈川第15区で初当選
+外務大臣・防衛大臣・国家公安委員長・規制改革担当大臣・防災担当大臣・ワクチン担当大臣などを歴任し、2022年8月10日に、第二次岸田改造内閣の下でデジタル大臣、国家公務員制度担当、内閣府特命担当大臣（消費者及び食品安全）に就任
+（参考）https://www.taro.org`,
+    photo: "/images/kono/1.webp"
   },
   matsubara: {
     name: "松原仁",
@@ -69,6 +75,14 @@ export default {
 専門は、人工知能、Webマイニング、ビッグデータ分析、ディープラーニング。
 （参考）https://weblab.t.u-tokyo.ac.jp/dt_team/matsuo/`,
     photo: "/images/matsuo/5.webp"
+  },
+  narita: {
+    name: "成田悠輔",
+    title: "成田悠輔",
+    subtitle: "",
+    date: "2022/??/??",
+    profile: ``,
+    photo: null
   },
   yamagiwa: {
     name: "山極壽一",
